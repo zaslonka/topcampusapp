@@ -1,0 +1,148 @@
+{
+    "styles": {
+      "container": {
+        "backgroundColor": "#e6f7ec",
+        "border": "1px solid #d0e4d4",
+        "padding": "20px",
+        "borderRadius": "8px",
+        "fontFamily": "Arial, sans-serif",
+        "display": "flex",
+        "justifyContent": "space-between",
+        "alignItems": "center"
+      },
+      "left": {
+        "maxWidth": "65%",
+        "padding": "20px"
+      },
+      "right": {
+        "width": "20%", 
+        "padding": "10px",
+        "marginRight": "20px"
+      },
+      "heading": {
+        "fontSize": "1.5em",
+        "fontWeight": "bold",
+        "marginBottom": "10px"
+      },
+      "inputGroup": {
+        "display": "flex",
+        "marginTop": "15px"
+      },
+      "input": {
+        "flex": 1,
+        "padding": "10px",
+        "borderRadius": "5px 0 0 5px",
+        "border": "1px solid #ccc"
+      },
+      "button": {
+        "padding": "10px 20px",
+        "borderRadius": "0 5px 5px 0",
+        "backgroundColor": "#007b5e",
+        "color": "#fff",
+        "border": "none",
+        "cursor": "pointer"
+      },
+      "link": {
+        "display": "block",
+        "marginTop": "20px",
+        "color": "#007b5e",
+        "textDecoration": "none",
+        "fontWeight": "bold"
+      }
+    },
+    "searchConfig": {
+    "inputGroup": {
+      "margin": "1rem auto",
+      "display": "flex",
+      "alignItems": "stretch",
+      "height": "42px"
+    },
+    "inputGroupText": {
+      "backgroundColor": "white",
+      "border": "1px solid #198754",
+      "borderRight": "none",
+      "padding": "0px 10px",
+      "display": "flex",
+      "alignItems": "center"
+    },
+    "icon": {
+      "color": "#198754",
+      "fontSize": "20px"
+    },
+    "input": {
+      "flex": 1,
+      "padding": "0 10px",
+      "border": "1px solid #198754",
+      "borderLeft": "none",
+      "outline": "none",
+      "boxShadow": "none",
+      "height": "95%"
+    },
+    "button": {
+      "padding": "0 20px",
+      "backgroundColor": "#198754",
+      "color": "white",
+      "border": "none",
+      "cursor": "pointer",
+      "borderTopRightRadius": "6px",
+      "borderBottomRightRadius": "6px",
+      "height": "100%"
+    }
+  },
+  "apiConfig": {
+    "searchUrl": "/Saba/Web_spf/EU2TNB0229/app/catalog/search",
+    "queryParameter": "&selectedTab=LEARNINGEVENT",
+    "isFullUrl": false
+    },
+    "infoCard": {
+      "card": {
+        "border": "2px solid #198754",
+        "borderRadius": "8px",
+        "textAlign": "center",
+        "padding": "1rem",
+        "display": "flex",
+        "flexDirection": "column",
+        "alignItems": "center",
+        "boxShadow": "0 4px 6px rgba(0, 0, 0, 0.1)",
+        "backgroundColor": "#ffffff"
+      },
+      "title": {
+        "fontSize": "1.25rem",
+        "fontWeight": "600",
+        "marginTop": "0.5rem",
+        "color": "#198754",
+        "textDecoration": "none",
+        "cursor": "pointer"
+      },
+      "icon": {
+        "color": "#FF0000",
+        "fontSize": "2rem"
+      },
+      "text": {
+        "fontSize": "0.875rem",
+        "color": "#6c757d",
+        "marginTop": "1rem"
+      }
+    },
+    "catalogCard": {
+      "icon": "FiBookOpen",
+      "title": "Katalog",
+      "text": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour...",
+      "link": "/Saba/Web_spf/EU2TNB0229/app/catalog",
+      "target": "_self",
+      "isFullUrl": false
+    },
+    "staticText": {
+      "welcomeText": "velkommen til Campus!",
+      "description": "Statens digitale læringsplatform, hvor du kan styrke dine kompetencer gennem e-læringskurser...",
+      "searchPlaceholder": "Søg og find dit næste kursus...",
+      "searchButton": "Søg",
+      "catalogTitle": "Katalog",
+      "catalogDescription": "I kursuskatalog finder du alle Campus kurser...",
+      "myTeamLabel": "My Team"
+    },
+    "links": {
+      "myTeam": "https://wp.pl"
+    }
+  }
+  

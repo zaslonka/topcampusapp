@@ -1,0 +1,22 @@
+GET kmdsb2-api.sabacloud.com/v1/login
+Content-Type: application/json
+user: kao@kmd.dk
+password: Kmd!2024
+
+###
+
+GET kmdsb2-api.sabacloud.com/v1/people?type=internal&count=10&startPage=1
+Content-Type: application/json
+SabaCertificate: RVUyVE5CMDIyOV4jXkRseVRQLXdCbS1qX18tRnBaVFRFbjNUaWtqdFA2dXRpenVpc2JvWDZhTnFuM2dQR0NZVUlfNXRvRnNPMnEtTHpTQWR5ZDBMNWI4dVY1Vm1LMWFlT2dueW5HMjM2VWxuUGVoSUNobzNiZzJTSzlLSzJuMThqMEhiMUt6Z2htb2VQakJaVFVTQW96SXBMN0cwcHlsZnpEQQ
+
+###
+GET kmdsb2-api.sabacloud.com/v1/people/emplo000000000003326:(fname,is_manager)
+Content-Type: application/json
+SabaCertificate: RVUyVE5CMDIyOV4jXkRseVRQLXdCbS1qX18tRnBaVFRFbjNUaWtqdFA2dXRpenVpc2JvWDZhTnFuM2dQR0NZVUlfNXRvRnNPMnEtTHpTQWR5ZDBMNWI4dVY1Vm1LMWFlT2dueW5HMjM2VWxuUGVoSUNobzNiZzJTSzlLSzJuMThqMEhiMUt6Z2htb2VQakJaVFVTQW96SXBMN0cwcHlsZnpEQQ
+
+###
+GET kmdsb2-api.sabacloud.com/v1/people?type=internal&f=(status,is_manager)&count=100&startPage=1
+Content-Type: application/json
+SabaCertificate: RVUyVE5CMDIyOV4jXkRseVRQLXdCbS1qX18tRnBaVFRFbjNUaWtqdFA2dXRpenVpc2JvWDZhTnFuM2dQR0NZVUlfNXRvRnNPMnEtTHpTQWR5ZDBMNWI4dVY1Vm1LMWFlT2dueW5HMjM2VWxuUGVoSUNobzNiZzJTSzlLSzJuMThqMEhiMUt6Z2htb2VQakJaVFVTQW96SXBMN0cwcHlsZnpEQQ
+
+
