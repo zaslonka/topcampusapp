@@ -1,7 +1,7 @@
 GET kmdsb2-api.sabacloud.com/v1/login
 Content-Type: application/json
-user: kao@kmd.dk
-password: Kmd!2024
+user: 
+password: 
 
 ###
 
