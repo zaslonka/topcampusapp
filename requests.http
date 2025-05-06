@@ -1,7 +1,7 @@
 GET kmdsb2-api.sabacloud.com/v1/login
 Content-Type: application/json
-user: 
-password: 
+user:
+password:
 
 ###
 
@@ -10,7 +10,7 @@ Content-Type: application/json
 SabaCertificate: RVUyVE5CMDIyOV4jXkRseVRQLXdCbS1qX18tRnBaVFRFbjNUaWtqdFA2dXRpenVpc2JvWDZhTnFuM2dQR0NZVUlfNXRvRnNPMnEtTHpTQWR5ZDBMNWI4dVY1Vm1LMWFlT2dueW5HMjM2VWxuUGVoSUNobzNiZzJTSzlLSzJuMThqMEhiMUt6Z2htb2VQakJaVFVTQW96SXBMN0cwcHlsZnpEQQ
 
 ###
-GET kmdsb2-api.sabacloud.com/v1/people/emplo000000000003326:(fname,is_manager)
+GET kmdsb2-api.sabacloud.com/v1/people/emplo000000000003331:(fname,is_manager)
 Content-Type: application/json
 SabaCertificate: RVUyVE5CMDIyOV4jXkRseVRQLXdCbS1qX18tRnBaVFRFbjNUaWtqdFA2dXRpenVpc2JvWDZhTnFuM2dQR0NZVUlfNXRvRnNPMnEtTHpTQWR5ZDBMNWI4dVY1Vm1LMWFlT2dueW5HMjM2VWxuUGVoSUNobzNiZzJTSzlLSzJuMThqMEhiMUt6Z2htb2VQakJaVFVTQW96SXBMN0cwcHlsZnpEQQ
 
@@ -19,4 +19,22 @@ GET kmdsb2-api.sabacloud.com/v1/people?type=internal&f=(status,is_manager)&count
 Content-Type: application/json
 SabaCertificate: RVUyVE5CMDIyOV4jXkRseVRQLXdCbS1qX18tRnBaVFRFbjNUaWtqdFA2dXRpenVpc2JvWDZhTnFuM2dQR0NZVUlfNXRvRnNPMnEtTHpTQWR5ZDBMNWI4dVY1Vm1LMWFlT2dueW5HMjM2VWxuUGVoSUNobzNiZzJTSzlLSzJuMThqMEhiMUt6Z2htb2VQakJaVFVTQW96SXBMN0cwcHlsZnpEQQ
 
+###
+GET kmdsb2-api.sabacloud.com/v1/enrollment?count=1000&startPage=1
+Content-Type: application/json
+SabaCertificate: RVUyVE5CMDIyOV4jXkRseVRQLXdCbS1qX18tRnBaVFRFbjNUaWtqdFA2dXRpenVpc2JvWDZhTnFuM2dQR0NZVUlfNXRvRnNPMnEtTHpTQWR5ZDBMNWI4dVY1Vm1LMWFlT2dueW5HMjM2VWxuUGVoSUNobzNiZzJTSzlLSzJuMThqMEhiMUt6Z2htb2VQakJaVFVTQW96SXBMN0cwcHlsZnpEQQ
 
+###
+GET kmdsb2-api.sabacloud.com/v1/enrollments/regdw000000000003622/sections:classdetail
+Content-Type: application/json
+SabaCertificate: RVUyVE5CMDIyOV4jXkRseVRQLXdCbS1qX18tRnBaVFRFbjNUaWtqdFA2dXRpenVpc2JvWDZhTnFuM2dQR0NZVUlfNXRvRnNPMnEtTHpTQWR5ZDBMNWI4dVY1Vm1LMWFlT2dueW5HMjM2VWxuUGVoSUNobzNiZzJTSzlLSzJuMThqMEhiMUt6Z2htb2VQakJaVFVTQW96SXBMN0cwcHlsZnpEQQ
+
+###
+GET kmdsb2-api.sabacloud.com/v1/groups?count=1000&startPage=1&includeDetails=false
+Content-Type: application/json
+SabaCertificate: RVUyVE5CMDIyOV4jXkRseVRQLXdCbS1qX18tRnBaVFRFbjNUaWtqdFA2dXRpenVpc2JvWDZhTnFuM2dQR0NZVUlfNXRvRnNPMnEtTHpTQWR5ZDBMNWI4dVY1Vm1LMWFlT2dueW5HMjM2VWxuUGVoSUNobzNiZzJTSzlLSzJuMThqMEhiMUt6Z2htb2VQakJaVFVTQW96SXBMN0cwcHlsZnpEQQ
+
+###
+GET https://kmdsb2-api.sabacloud.com/v1/review?q=(holder_id%3D%3Demplo000000000003325)&f=(cycle_name,name)&count=10&startPage=1&includeDetails=false
+Content-Type: application/json
+SabaCertificate: RVUyVE5CMDIyOV4jXkRseVRQLXdCbS1qX18tRnBaVFRFbjNUaWtqdFA2dXRpenVpc2JvWDZhTnFuM2dQR0NZVUlfNXRvRnNPMnEtTHpTQWR5ZDBMNWI4dVY1Vm1LMWFlT2dueW5HMjM2VWxuUGVoSUNobzNiZzJTSzlLSzJuMThqMEhiMUt6Z2htb2VQakJaVFVTQW96SXBMN0cwcHlsZnpEQQ
