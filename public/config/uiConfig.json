@@ -51,48 +51,49 @@
       }
     },
     "searchConfig": {
-    "inputGroup": {
-      "margin": "1rem auto",
-      "display": "flex",
-      "alignItems": "stretch",
-      "height": "42px"
+      "inputGroup": {
+        "margin": "1rem auto",
+        "display": "flex",
+        "alignItems": "stretch",
+        "height": "42px"
+      },
+      "inputGroupText": {
+        "backgroundColor": "white",
+        "border": "1px solid #198754",
+        "borderRight": "none",
+        "padding": "0px 10px",
+        "display": "flex",
+        "alignItems": "center"
+      },
+      "icon": {
+        "color": "#198754",
+        "fontSize": "20px"
+      },
+      "input": {
+        "flex": 1,
+        "padding": "0 10px",
+        "border": "1px solid #198754",
+        "borderLeft": "none",
+        "outline": "none",
+        "boxShadow": "none",
+        "height": "95%"
+      },
+      "button": {
+        "padding": "0 20px",
+        "backgroundColor": "#198754",
+        "color": "white",
+        "border": "none",
+        "cursor": "pointer",
+        "borderTopRightRadius": "6px",
+        "borderBottomRightRadius": "6px",
+        "height": "100%"
+      }
     },
-    "inputGroupText": {
-      "backgroundColor": "white",
-      "border": "1px solid #198754",
-      "borderRight": "none",
-      "padding": "0px 10px",
-      "display": "flex",
-      "alignItems": "center"
-    },
-    "icon": {
-      "color": "#198754",
-      "fontSize": "20px"
-    },
-    "input": {
-      "flex": 1,
-      "padding": "0 10px",
-      "border": "1px solid #198754",
-      "borderLeft": "none",
-      "outline": "none",
-      "boxShadow": "none",
-      "height": "95%"
-    },
-    "button": {
-      "padding": "0 20px",
-      "backgroundColor": "#198754",
-      "color": "white",
-      "border": "none",
-      "cursor": "pointer",
-      "borderTopRightRadius": "6px",
-      "borderBottomRightRadius": "6px",
-      "height": "100%"
-    }
-  },
-  "apiConfig": {
-    "searchUrl": "/Saba/Web_spf/EU2TNB0229/app/catalog/search",
-    "queryParameter": "&selectedTab=LEARNINGEVENT",
-    "isFullUrl": false
+    "apiConfig": {
+      "searchUrl": "/Saba/Web_spf/EU2TNB0229/app/catalog/search",
+      "queryParameter": "&selectedTab=LEARNINGEVENT",
+      "isFullUrl": false,
+      "profileUrl": "https://kmdsb2-api.sabacloud.com/v1/people/${userId}:(fname,is_manager)"
     },
     "infoCard": {
       "card": {
@@ -127,22 +128,21 @@
     "catalogCard": {
       "icon": "FiBookOpen",
       "title": "Katalog",
-      "text": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour...",
+      "text": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
       "link": "/Saba/Web_spf/EU2TNB0229/app/catalog",
       "target": "_self",
       "isFullUrl": false
     },
     "staticText": {
       "welcomeText": "velkommen til Campus!",
-      "description": "Statens digitale læringsplatform, hvor du kan styrke dine kompetencer gennem e-læringskurser...",
-      "searchPlaceholder": "Søg og find dit næste kursus...",
+      "description": "Statens digitale læringsplatform, hvor du kan styrke dine kompetencer gennem e-læringskurser",
+      "searchPlaceholder": "Søg og find dit næste kursus",
       "searchButton": "Søg",
       "catalogTitle": "Katalog",
-      "catalogDescription": "I kursuskatalog finder du alle Campus kurser...",
+      "catalogDescription": "I kursuskatalog finder du alle Campus kurser",
       "myTeamLabel": "My Team"
     },
     "links": {
       "myTeam": "https://wp.pl"
     }
-  }
-  
+}

@@ -13,10 +13,10 @@ const WelcomeBanner = () => {
 
   useEffect(() => {
     if (!userId || !certificate) return;
-    getUserProfile(userId, certificate)
+    getUserProfile(userId, certificate, config)
       .then(setUser)
       .catch(console.error);
-  }, [userId, certificate]);
+  }, [userId, certificate, config]);
 
   if (!user) return <p>Loading...</p>;
 

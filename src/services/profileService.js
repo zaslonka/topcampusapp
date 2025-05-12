@@ -1,6 +1,6 @@
 // /src/services/profileService.js
-export const getUserProfile = async (userId, certificate) => {
-    const url = `https://kmdsb2-api.sabacloud.com/v1/people/${userId}:(fname,is_manager)`;
+export const getUserProfile = async (userId, certificate, config) => {
+    const url = config.apiConfig.profileUrl.replace('${userId}', userId);
     
     const res = await fetch(url, {
       method: "GET",
