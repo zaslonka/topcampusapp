@@ -2,11 +2,12 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WelcomeBanner from "./components/WelcomeBanner";
 import { ConfigProvider } from "./context/ConfigContext";
+import { getRouterBasename } from "./services/configService";
 
 function App() {
   return (
     <ConfigProvider>
-      <Router basename="/CampusTopApp">
+      <Router basename={getRouterBasename()}>
         <Routes>
           <Route path="/:userId/:certificate" element={<WelcomeBanner />} />
         </Routes>
