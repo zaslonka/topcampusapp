@@ -1,137 +1,107 @@
 {
     "styles": {
-      "container": {
-        "backgroundColor": "transparent",
-        "padding": "20px",
-        "borderRadius": "8px",
-        "fontFamily": "Arial, sans-serif",
-        "display": "flex",
-        "minHeight": "250px"
-      },
-      "left": {
-        "maxWidth": "65%",
-        "padding": "20px"
-      },
-      "right": {
-        "width": "20%", 
-        "padding": "10px",
-        "marginRight": "20px"
-      },
-      "heading": {
-        "fontSize": "1.5em",
-        "fontWeight": "bold",
-        "marginBottom": "10px",
-        "color": "#FFFFFF"
-        
-      },
-      "inputGroup": {
-        "display": "flex",
-        "marginTop": "15px"
-      },
-      "input": {
-        "flex": 1,
-        "padding": "10px",
-        "borderRadius": "5px 0 0 5px",
-        "border": "1px solid #ccc"
-      },
-      "button": {
-        "padding": "10px 20px",
-        "borderRadius": "0 5px 5px 0",
-        "backgroundColor": "#007b5e",
-        "color": "#fff",
-        "border": "none",
-        "cursor": "pointer"
-      },
-      "link": {
-        "display": "block",
-        "marginTop": "20px",
-        "color": "#007b5e",
-        "textDecoration": "none",
-        "fontWeight": "bold"
-      }
-    },
-    "searchConfig": {
-      "inputGroup": {
-        "margin": "1rem auto",
-        "display": "flex",
-        "alignItems": "stretch",
-        "height": "42px"
-      },
-      "inputGroupText": {
-        "backgroundColor": "white",
-        "border": "1px solid #198754",
-        "borderRight": "none",
-        "padding": "0px 10px",
-        "display": "flex",
-        "alignItems": "center"
-      },
-      "icon": {
-        "color": "#198754",
-        "fontSize": "20px"
-      },
-      "input": {
-        "flex": 1,
-        "padding": "0 10px",
-        "border": "1px solid #198754",
-        "borderLeft": "none",
-        "outline": "none",
-        "boxShadow": "none",
-        "height": "95%"
+      "welcomeBanner": {
+        "container": {
+          "backgroundImage": "url('https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80')",
+          "backgroundSize": "cover",
+          "backgroundPosition": "center",
+          "minHeight": "300px",
+          "minWidth": "466px",
+          "padding": "40px",
+          "position": "relative",
+          "display": "flex",
+          "alignItems": "center",
+          "borderRadius": "12px",
+          "overflow": "hidden",
+          "boxShadow": "0 8px 16px 0 rgba(0, 0, 0, 0.3)"
+        },
+        "contentContainer": {
+          "maxWidth": "800px",
+          "color": "#FFFFFF"
+        },
+        "heading": {
+          "fontSize": "2.5em",
+          "fontWeight": "bold",
+          "marginBottom": "15px",
+          "color": "#FFFFFF"
+        },
+        "description": {
+          "fontSize": "1.1em",
+          "marginBottom": "30px",
+          "maxWidth": "600px",
+          "lineHeight": "1.5",
+          "color": "#FFFFFF"
+        },
+        "buttonContainer": {
+          "display": "flex",
+          "gap": "20px",
+          "flexWrap": "wrap"
+        }
       },
       "button": {
-        "padding": "0 20px",
-        "backgroundColor": "#198754",
-        "color": "white",
-        "border": "none",
-        "cursor": "pointer",
-        "borderTopRightRadius": "6px",
-        "borderBottomRightRadius": "6px",
-        "height": "100%"
+        "base": {
+          "display": "flex",
+          "alignItems": "flex-start",
+          "padding": "15px 20px",
+          "border": "1px solid #E5E5E5",
+          "borderRadius": "8px",
+          "cursor": "pointer",
+          "width": "260px",
+          "textAlign": "left",
+          "boxSizing": "border-box",
+          "textDecoration": "none",
+          "color": "inherit",
+          "transition": "all 0.3s ease",
+          "boxShadow": "0 2px 4px 0 rgba(0, 0, 0, 0.3)",
+          "position": "relative"
+        },
+        "green": {
+          "backgroundColor": "#e1ede7"
+        },
+        "white": {
+          "backgroundColor": "#FFFFFF"
+        },
+        "hover": {
+          "transform": "translateY(-2px)",
+          "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.3)"
+        },
+        "textContainer": {
+          "flex": 1,
+          "display": "flex",
+          "flexDirection": "column",
+          "marginRight": "40px"
+        },
+        "title": {
+          "fontWeight": "600",
+          "fontSize": "16px",
+          "color": "#333",
+          "marginBottom": "6px"
+        },
+        "subtitle": {
+          "fontSize": "14px",
+          "color": "#666",
+          "paddingRight": "20px"
+        },
+        "arrowContainer": {
+          "position": "absolute",
+          "right": "15px",
+          "top": "65%",
+          "transform": "translateY(-50%)",
+          "width": "27px",
+          "height": "27px",
+          "backgroundColor": "#008450",
+          "borderRadius": "50%",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "color": "#FFFFFF",
+          "transition": "transform 0.3s ease"
+        }
       }
     },
-    "apiConfig": {
-      "searchUrl": "/Saba/Web_spf/EU2TNB0229/app/catalog/search",
-      "queryParameter": "&selectedTab=LEARNINGEVENT",
-      "isFullUrl": false,
-      "profileUrl": "https://kmdsb2-api.sabacloud.com/v1/people/${userId}:(fname,is_manager)"
-    },
-    "infoCard": {
-      "card": {
-        "border": "2px solid #198754",
-        "borderRadius": "8px",
-        "textAlign": "center",
-        "padding": "1rem",
-        "display": "flex",
-        "flexDirection": "column",
-        "alignItems": "center",
-        "boxShadow": "0 4px 6px rgba(0, 0, 0, 0.1)",
-        "backgroundColor": "#ffffff"
-      },
-      "title": {
-        "fontSize": "1.25rem",
-        "fontWeight": "600",
-        "marginTop": "0.5rem",
-        "color": "#198754",
-        "textDecoration": "none",
-        "cursor": "pointer"
-      },
-      "icon": {
-        "color": "#FF0000",
-        "fontSize": "2rem"
-      },
-      "text": {
-        "fontSize": "0.875rem",
-        "color": "#6c757d",
-        "marginTop": "1rem"
-      }
-    },
-    "catalogCard": {
-      "icon": "FiBookOpen",
-      "title": "Katalog",
-      "text": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
-      "link": "/Saba/Web_spf/EU2TNB0229/app/catalog",
-      "target": "_self",
-      "isFullUrl": false
+    "links": {
+      "catalog": "/Saba/Web_spf/EU2TNB0229/app/catalog",
+      "manager": "/Saba/Web_spf/EU2TNB0229/app/manager"
     },
     "staticText": {
       "welcomeText": "velkommen til Campus!",
@@ -140,9 +110,16 @@
       "searchButton": "Søg",
       "catalogTitle": "Katalog",
       "catalogDescription": "I kursuskatalog finder du alle Campus kurser",
-      "myTeamLabel": "My Team"
-    },
-    "links": {
-      "myTeam": "https://wp.pl"
+      "myTeamLabel": "My Team",
+      "buttons": {
+        "catalog": {
+          "title": "Kursuskatalog",
+          "subtitle": "Klik her for at gå til Campus kursuskatalog"
+        },
+        "manager": {
+          "title": "Info til lederes",
+          "subtitle": "Få en kort oversigt over mulighederne i Campus"
+        }
+      }
     }
 }
