@@ -45,15 +45,15 @@ const WelcomeBanner = () => {
         <p style={s.description}>{t.description}</p>
         <div style={s.buttonContainer}>
           <Button
-            title="Kursuskatalog"
-            subtitle="Klik her for at gå til Campus kursuskatalog"
+            title={t.buttons.catalog.title}
+            subtitle={t.buttons.catalog.subtitle}
             onClick={handleCatalogClick}
             variant="green"
           />
           {is_manager === 'true' && (
             <Button
-              title="Info til ledere"
-              subtitle="Få en kort oversigt over mulighederne i Campus"
+              title={t.buttons.manager.title}
+              subtitle={t.buttons.manager.subtitle}
               onClick={handleInfoClick}
             />
           )}

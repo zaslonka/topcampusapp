@@ -105,19 +105,14 @@
     },
     "staticText": {
       "welcomeText": "velkommen til Campus!",
-      "description": "Statens dine kompetencer gennem e-læringskurser.Statens digitale læringsplatform, hvor du kan styrke dine kompetencer gennem e-læringskurser",
-      "searchPlaceholder": "Søg og find dit næste kursus",
-      "searchButton": "Søg",
-      "catalogTitle": "Katalog",
-      "catalogDescription": "I kursuskatalog finder du alle Campus kurser",
-      "myTeamLabel": "My Team",
+      "description": "Statens digitale læringsplatform, hvor du kan styrke dine kompetencer gennem e-læringskurser",
       "buttons": {
         "catalog": {
           "title": "Kursuskatalog",
           "subtitle": "Klik her for at gå til Campus kursuskatalog"
         },
         "manager": {
-          "title": "Info til lederes",
+          "title": "Info til ledere",
           "subtitle": "Få en kort oversigt over mulighederne i Campus"
         }
       }
