@@ -1,14 +1,12 @@
 {
     "styles": {
       "container": {
-        "backgroundColor": "#e6f7ec",
-        "border": "1px solid #d0e4d4",
+        "backgroundColor": "transparent",
         "padding": "20px",
         "borderRadius": "8px",
         "fontFamily": "Arial, sans-serif",
         "display": "flex",
-        "justifyContent": "space-between",
-        "alignItems": "center"
+        "minHeight": "250px"
       },
       "left": {
         "maxWidth": "65%",
@@ -22,7 +20,9 @@
       "heading": {
         "fontSize": "1.5em",
         "fontWeight": "bold",
-        "marginBottom": "10px"
+        "marginBottom": "10px",
+        "color": "#FFFFFF"
+        
       },
       "inputGroup": {
         "display": "flex",
@@ -135,7 +135,7 @@
     },
     "staticText": {
       "welcomeText": "velkommen til Campus!",
-      "description": "Statens digitale læringsplatform, hvor du kan styrke dine kompetencer gennem e-læringskurser",
+      "description": "Statens dine kompetencer gennem e-læringskurser.Statens digitale læringsplatform, hvor du kan styrke dine kompetencer gennem e-læringskurser",
       "searchPlaceholder": "Søg og find dit næste kursus",
       "searchButton": "Søg",
       "catalogTitle": "Katalog",

@@ -9,7 +9,7 @@ function App() {
     <ConfigProvider>
       <Router basename={getRouterBasename()}>
         <Routes>
-          <Route path="/:userId/:certificate" element={<WelcomeBanner />} />
+          <Route path="/:userId/:is_manager/:fname/:certificate" element={<WelcomeBanner />} />
         </Routes>
       </Router>
     </ConfigProvider>

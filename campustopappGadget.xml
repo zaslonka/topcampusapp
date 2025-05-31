@@ -16,8 +16,10 @@
           if (viewData && viewData.sabaContext){
             var userId = encodeURIComponent(viewData.sabaContext.userId);
             var cert = encodeURIComponent(viewData.sabaContext.apiCertificate);
+            var fname = encodeURIComponent(viewData.sabaContext.fname);
+            var is_manager = encodeURIComponent(viewData.sabaContext.is_manager);
 
-            var iframeUrl = "https://datasyncqa.kmd.dk/CampusTopApp/" + userId + "/" + cert;
+            var iframeUrl = "https://datasyncqa.kmd.dk/CampusTopApp/" + userId + "/" + is_manager + "/" + fname + "/" + cert;
             var divstuff = "<iframe src='" + iframeUrl + "' style='width:100%; height:285px;' frameBorder='0'></iframe>";
             divContent.innerHTML = divstuff;
             gadgets.window.adjustHeight();
