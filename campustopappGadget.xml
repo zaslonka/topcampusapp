@@ -6,22 +6,76 @@
     <Require feature="views"/>
     <Require feature="dynamic-height"/>
   </ModulePrefs>
-  <Content type="html" view="home">
+  <Content type="html" view="homecanvas">
     <![CDATA[
+    <script xmlns:os="http://ns.opensocial.org/2008/markup" type="text/os-data">
+      /* here we can use data passed from the gadget to make an API call before the microapp is rendered. You must replace "your.sabacloud.com" with your site url. */
+
+      <os:HttpRequest key="profile_data" href="https://kmdsb.sabacloud.com/Saba/api/component/people/${ViewParams.sabaContext.userId}:(socialProfile,coreProfile,lname,fname,email,is_manager,person_no,customValues)?SabaCertificate=${ViewParams.sabaContext.certificate}"/>
+
+    </script>
+
       <script type="text/javascript">
         function init(){
-          var viewData = gadgets.views.getParams(); // ViewParams from Saba
+          var profileData = opensocial.data.DataContext.getDataSet('profile_data');
+          var viewData = gadgets.views.getParams(); 
           var divContent = document.getElementById("content");
+          
+          if (!profileData || !profileData.content) {
+            divContent.innerHTML = "Profile data not available";
+            return;
+          }
+          else {
+            console.log("Profile data loaded successfully");
+            console.log(profileData);
+          }
 
-          if (viewData && viewData.sabaContext){
-            var userId = encodeURIComponent(viewData.sabaContext.userId);
+
+          if (viewData && viewData.sabaContext && profileData && profileData.content) {
+            var apiDataString = gadgets.json.stringify(profileData);
+            console.log("apiDataString: " + apiDataString);            var userId = encodeURIComponent(viewData.sabaContext.userId);
             var cert = encodeURIComponent(viewData.sabaContext.apiCertificate);
-            var fname = encodeURIComponent(viewData.sabaContext.fname);
-            var is_manager = encodeURIComponent(viewData.sabaContext.is_manager);
-
-            var iframeUrl = "https://datasyncqa.kmd.dk/CampusTopApp/" + userId + "/" + is_manager + "/" + fname + "/" + cert;
-            var divstuff = "<iframe src='" + iframeUrl + "' style='width:100%; height:285px;' frameBorder='0'></iframe>";
-            divContent.innerHTML = divstuff;
+            var firstName = encodeURIComponent(profileData.content.fname);
+            var is_manager = encodeURIComponent(profileData.content.is_manager);
+              var iframeUrl = "https://datasyncqa.kmd.dk/CampusTopApp/" + userId + "/" + is_manager + "/" + firstName + "/" + cert;            var iframe = document.createElement('iframe');
+            iframe.src = iframeUrl;
+            iframe.style.border = 'none';
+            iframe.style.width = '100%';
+            iframe.style.height = '450px'; // Start with minimal height
+            iframe.style.overflow = 'hidden';
+            iframe.id = 'campusApp';
+            iframe.scrolling = 'no';
+            iframe.frameBorder = '0';
+            iframe.seamless = 'seamless';
+            
+            var divWrapper = document.createElement('div');
+            divWrapper.style.width = '100%';
+            divWrapper.style.overflow = 'hidden';
+            divWrapper.style.position = 'relative';
+            divWrapper.appendChild(iframe);
+            
+            divContent.appendChild(divWrapper);
+              // Listen for height messages from iframe
+            window.addEventListener('message', function(event) {
+              if (event.origin === 'https://datasyncqa.kmd.dk' && event.data.type === 'resize') {
+                var newHeight = event.data.height;
+                console.log('Received height update:', newHeight);
+                iframe.style.height = newHeight + 'px';
+                
+                // Force a slight delay before adjusting gadget height
+                setTimeout(function() {
+                  gadgets.window.adjustHeight();
+                }, 100);
+              }
+            });
+            
+            // Also listen for iframe load to trigger initial height adjustment
+            iframe.onload = function() {
+              setTimeout(function() {
+                gadgets.window.adjustHeight();
+              }, 500);
+            };
+            
             gadgets.window.adjustHeight();
           } else {
             divContent.innerHTML = "Failed to load page";
@@ -29,10 +83,8 @@
         }
 
         gadgets.util.registerOnLoadHandler(init);
-      </script>
-
-      <script type="text/os-template">
-        <div id="content" style="width:100%; height:285px;"></div>
+      </script>      <script type="text/os-template">
+        <div id="content" style="width:100%; overflow: hidden;"></div>
       </script>
     ]]>
   </Content>

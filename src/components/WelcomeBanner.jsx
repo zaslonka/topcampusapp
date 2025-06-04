@@ -1,12 +1,26 @@
 // /src/components/WelcomeBanner.jsx
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useConfig } from '../context/ConfigContext';
 import Button from "./Button";
+import { observeHeightChanges } from '../services/iframeService';
 
 const WelcomeBanner = () => {
   const { is_manager, fname } = useParams();
   const config = useConfig();
+
+  // Set up height observation for iframe communication
+  useEffect(() => {
+    const cleanup = observeHeightChanges();
+    
+    return () => {
+      if (typeof cleanup === 'function') {
+        cleanup();
+      } else if (cleanup && cleanup.disconnect) {
+        cleanup.disconnect();
+      }
+    };
+  }, []);
 
   if (!fname) return <p>Loading...</p>;
 

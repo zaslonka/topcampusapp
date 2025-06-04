@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+/* Ensure no unnecessary margins or padding for iframe content */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

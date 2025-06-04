@@ -1,11 +1,10 @@
 {
     "styles": {
-      "welcomeBanner": {
-        "container": {
+      "welcomeBanner": {        "container": {
           "backgroundImage": "url('https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80')",
           "backgroundSize": "cover",
           "backgroundPosition": "center",
-          "minHeight": "300px",
+          "minHeight": "250px",
           "minWidth": "466px",
           "padding": "40px",
           "position": "relative",
@@ -13,7 +12,9 @@
           "alignItems": "center",
           "borderRadius": "12px",
           "overflow": "hidden",
-          "boxShadow": "0 8px 16px 0 rgba(0, 0, 0, 0.3)"
+          "boxShadow": "0 8px 16px 0 rgba(0, 0, 0, 0.3)",
+          "width": "100%",
+          "boxSizing": "border-box"
         },
         "contentContainer": {
           "maxWidth": "800px",
