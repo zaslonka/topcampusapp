@@ -33,11 +33,14 @@
 
           if (viewData && viewData.sabaContext && profileData && profileData.content) {
             var apiDataString = gadgets.json.stringify(profileData);
-            console.log("apiDataString: " + apiDataString);            var userId = encodeURIComponent(viewData.sabaContext.userId);
+            var userId = encodeURIComponent(viewData.sabaContext.userId);
             var cert = encodeURIComponent(viewData.sabaContext.apiCertificate);
+            var language = encodeURIComponent(viewData.sabaContext.language);
             var firstName = encodeURIComponent(profileData.content.fname);
             var is_manager = encodeURIComponent(profileData.content.is_manager);
-              var iframeUrl = "https://datasyncqa.kmd.dk/CampusTopApp/" + userId + "/" + is_manager + "/" + firstName + "/" + cert;            var iframe = document.createElement('iframe');
+            var iframeUrl = "https://datasyncqa.kmd.dk/CampusTopApp/" + userId + "/" + is_manager + "/" + firstName + "/" + cert + "?lang=" + language;
+            
+            var iframe = document.createElement('iframe');
             iframe.src = iframeUrl;
             iframe.style.border = 'none';
             iframe.style.width = '100%';
