@@ -45,6 +45,17 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+## Localization
+
+This app supports config-driven localization similar to big-campus-microapp:
+
+- `public/config/uiConfig.json` contains an `i18n` section and localized strings using objects like `{ "da": "...", "en": "..." }`.
+- The config loader resolves values based on the effective language.
+- Language can be switched via the `?lang=` URL parameter (e.g. `?lang=en`). The choice is persisted in `localStorage` as `app.lang`.
+- A minimal language selector is rendered in the banner to change languages quickly.
+
+To add new translations, extend the localized objects or add a new locale code to `i18n.supportedLocales` and provide values.
+
 ### Code Splitting
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)

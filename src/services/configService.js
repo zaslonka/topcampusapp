@@ -70,7 +70,71 @@ export const loadConfig = async () => {
       throw new Error(`Failed to load configuration from any path. Last error: ${lastError?.message || 'Unknown error'}`);
     }
 
-    return await response.json();
+    const rawConfig = await response.json();
+
+    // ---------------- i18n resolution ----------------
+    // Heuristics to detect locale keys like "en", "da", "en-US"
+    const isLocaleKey = (key) => /^[a-z]{2}(?:-[A-Z]{2})?$/.test(key);
+
+    // A locale map is a plain object with locale-like keys and string values
+    const isLocaleMap = (val) => {
+      if (!val || typeof val !== "object" || Array.isArray(val)) return false;
+      const keys = Object.keys(val);
+      if (keys.length === 0) return false;
+      return (
+        keys.every(isLocaleKey) &&
+        Object.values(val).every((v) => typeof v === "string")
+      );
+    };
+
+    const resolveLocalized = (value, locale, fallback) => {
+      if (isLocaleMap(value)) {
+        return (
+          value[locale] ??
+          (fallback ? value[fallback] : undefined) ??
+          // last resort: first value
+          Object.values(value)[0]
+        );
+      }
+      if (Array.isArray(value)) {
+        return value.map((item) => resolveLocalized(item, locale, fallback));
+      }
+      if (value && typeof value === "object") {
+        const out = {};
+        for (const [k, v] of Object.entries(value)) {
+          out[k] = resolveLocalized(v, locale, fallback);
+        }
+        return out;
+      }
+      return value;
+    };
+
+    // Determine effective locale with override support
+    const urlLang = new URLSearchParams(window.location.search).get("lang");
+    const storedLang = localStorage.getItem("app.lang");
+    const configuredLocale = rawConfig?.i18n?.locale;
+    const fallbackLocale = rawConfig?.i18n?.fallbackLocale || "en";
+    const effectiveLocale = (urlLang || storedLang || configuredLocale || fallbackLocale || "en").trim();
+
+    // If URL provided a lang, persist it for subsequent loads
+    if (urlLang) {
+      try {
+        localStorage.setItem("app.lang", effectiveLocale);
+      } catch (e) {
+        console.warn("Unable to persist selected language:", e?.message);
+      }
+    }
+
+    const localizedConfig = resolveLocalized(rawConfig, effectiveLocale, fallbackLocale);
+
+    // Keep i18n metadata
+    localizedConfig.i18n = {
+      ...(rawConfig.i18n || {}),
+      locale: effectiveLocale,
+      fallbackLocale,
+    };
+
+    return localizedConfig;
   } catch (error) {
     console.error("Error loading configuration:", error);
     return null;

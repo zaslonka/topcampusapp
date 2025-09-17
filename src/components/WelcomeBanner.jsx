@@ -53,7 +53,7 @@ const WelcomeBanner = () => {
     <div style={s.container}>
       <div style={s.contentContainer}>
         <div style={s.heading}>
-          Hej {fname},<br />
+          {t.greetingPrefix} {fname},<br />
           {t.welcomeText}
         </div>
         <p style={s.description}>{t.description}</p>

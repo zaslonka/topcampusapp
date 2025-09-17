@@ -1,4 +1,9 @@
 {
+    "i18n": {
+      "locale": "da",
+      "fallbackLocale": "en",
+      "supportedLocales": ["da", "en"]
+    },
     "styles": {
       "welcomeBanner": {        "container": {
           "backgroundImage": "url('https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80')",
@@ -105,16 +110,17 @@
       "manager": "/Saba/Web_spf/EU2TNB0229/app/manager"
     },
     "staticText": {
-      "welcomeText": "velkommen til Campus!",
-      "description": "Statens digitale læringsplatform, hvor du kan styrke dine kompetencer gennem e-læringskurser",
+      "greetingPrefix": { "da": "Hej", "en": "Hi" },
+      "welcomeText": { "da": "velkommen til Campus!", "en": "welcome to Campus!" },
+      "description": { "da": "Statens digitale læringsplatform, hvor du kan styrke dine kompetencer gennem e-læringskurser", "en": "The Danish government’s digital learning platform where you can build skills through e-learning courses" },
       "buttons": {
         "catalog": {
-          "title": "Kursuskatalog",
-          "subtitle": "Klik her for at gå til Campus kursuskatalog"
+          "title": { "da": "Kursuskatalog", "en": "Course catalog" },
+          "subtitle": { "da": "Klik her for at gå til Campus kursuskatalog", "en": "Click to open the Campus course catalog" }
         },
         "manager": {
-          "title": "Info til ledere",
-          "subtitle": "Få en kort oversigt over mulighederne i Campus"
+          "title": { "da": "Info til ledere", "en": "Info for managers" },
+          "subtitle": { "da": "Få en kort oversigt over mulighederne i Campus", "en": "Get a short overview of what’s possible in Campus" }
         }
       }
     }
