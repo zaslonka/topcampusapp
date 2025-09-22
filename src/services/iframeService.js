@@ -31,7 +31,7 @@ export const observeHeightChanges = () => {
       html.offsetHeight
     );
 
-    console.log("Sending height to parent:", height);
+    //console.log("Sending height to parent:", height);
     sendHeightToParent(height);
   };
 

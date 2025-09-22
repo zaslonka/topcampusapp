@@ -1,10 +1,10 @@
 const getBasePath = () => {
   // Get the application base path by finding CampusTopApp in the path
   const pathname = window.location.pathname;
-  console.log("Current pathname:", pathname);
+  //console.log("Current pathname:", pathname);
   
   const pathSegments = pathname.split("/").filter(segment => segment !== "");
-  console.log("Path segments:", pathSegments);
+  //console.log("Path segments:", pathSegments);
   
   // Look for CampusTopApp in the path segments
   const appIndex = pathSegments.findIndex(segment => 
@@ -14,13 +14,13 @@ const getBasePath = () => {
   if (appIndex !== -1) {
     // Build the base path including all segments up to and including the app name
     const basePath = "/" + pathSegments.slice(0, appIndex + 1).join("/");
-    console.log("Found app base path:", basePath);
+    //console.log("Found app base path:", basePath);
     return basePath;
   }
   
   // Fallback: if we can't find the app name, try the first segment (original behavior)
   const fallbackPath = pathSegments.length > 0 ? "/" + pathSegments[0] : "";
-  console.log("Using fallback base path:", fallbackPath);
+  //console.log("Using fallback base path:", fallbackPath);
   return fallbackPath;
 };
 
@@ -35,7 +35,7 @@ export const loadConfig = async () => {
   try {
     // Get the base path dynamically
     const basePath = getBasePath();
-    console.log("Loading configuration from base path:", basePath);
+    //console.log("Loading configuration from base path:", basePath);
     
     // Array of potential config paths to try
     const configPaths = [
@@ -50,11 +50,11 @@ export const loadConfig = async () => {
     // Try each path until one succeeds
     for (const configPath of configPaths) {
       try {
-        console.log("Trying config path:", configPath);
+        //console.log("Trying config path:", configPath);
         response = await fetch(configPath);
         
         if (response.ok) {
-          console.log("Successfully loaded config from:", configPath);
+          //console.log("Successfully loaded config from:", configPath);
           break;
         } else {
           console.warn(`Config fetch failed for ${configPath}: ${response.status} ${response.statusText}`);

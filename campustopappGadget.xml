@@ -27,7 +27,7 @@
           }
           else {
             console.log("Profile data loaded successfully");
-            console.log(profileData);
+            /* console.log(profileData); */
           }
 
 
@@ -62,7 +62,7 @@
             window.addEventListener('message', function(event) {
               if (event.origin === 'https://datasyncqa.kmd.dk' && event.data.type === 'resize') {
                 var newHeight = event.data.height;
-                console.log('Received height update:', newHeight);
+                /* console.log('Received height update:', newHeight); */
                 iframe.style.height = newHeight + 'px';
                 
                 // Force a slight delay before adjusting gadget height
