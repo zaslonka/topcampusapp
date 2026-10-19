@@ -47,11 +47,16 @@ export const loadConfig = async () => {
     let response = null;
     let lastError = null;
 
+    // Add cache-busting parameter to prevent browser caching
+    const cacheBuster = `?t=${Date.now()}`;
+
     // Try each path until one succeeds
     for (const configPath of configPaths) {
       try {
         //console.log("Trying config path:", configPath);
-        response = await fetch(configPath);
+        response = await fetch(configPath + cacheBuster, {
+          cache: 'no-store'
+        });
         
         if (response.ok) {
           //console.log("Successfully loaded config from:", configPath);
